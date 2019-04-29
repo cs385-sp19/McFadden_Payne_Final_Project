@@ -1,3 +1,8 @@
+/*  Name: Luke McFadden, Adam Payne
+ *  Assignment: Final Project
+ *  Documentation Stmt: None
+ */
+
 import Foundation
 import UIKit
 

@@ -1,5 +1,5 @@
-/*  Name: Adam Payne
- *  Assignment: List
+/*  Name: Luke McFadden, Adam Payne
+ *  Assignment: Final Project
  *  Documentation Stmt: None
  */
 

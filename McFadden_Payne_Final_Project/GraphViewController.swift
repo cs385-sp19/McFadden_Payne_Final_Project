@@ -1,10 +1,7 @@
-//
-//  GraphViewController.swift
-//  McFadden_Payne_Final Project
-//
-//  Created by Luke McFadden on 4/28/19.
-//  Copyright © 2019 Adam Payne. All rights reserved.
-//
+/*  Name: Luke McFadden, Adam Payne
+ *  Assignment: Final Project
+ *  Documentation Stmt: None
+ */
 
 import Foundation
 import UIKit
