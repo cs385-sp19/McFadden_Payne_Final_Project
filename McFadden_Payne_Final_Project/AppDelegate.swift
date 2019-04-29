@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  List_Payne
-//
-//  Created by Adam Payne on 2/26/19.
-//  Copyright © 2019 Adam Payne. All rights reserved.
-//
 
 import UIKit
 

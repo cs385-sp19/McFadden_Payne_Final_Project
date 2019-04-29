@@ -42,6 +42,7 @@ class ToDoTableViewController: UITableViewController, ToDoCellDelegate {
         let todo = todos[indexPath.row]
         cell.titleLabel?.text = todo.title
         cell.isCompleteButton.isSelected = todo.isComplete
+        cell.backgroundColor = .clear
         cell.delegate = self
         return cell
     }
@@ -53,6 +54,7 @@ class ToDoTableViewController: UITableViewController, ToDoCellDelegate {
             todos = ToDo.loadSampleToDos()
         }
         navigationItem.leftBarButtonItem = editButtonItem
+        self.view.backgroundColor = UIColor(hue: 0.25, saturation: 0.66, brightness: 0.66, alpha: 1.0)
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

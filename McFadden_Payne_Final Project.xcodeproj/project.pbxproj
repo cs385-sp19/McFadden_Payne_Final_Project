@@ -15,10 +15,12 @@
 		2B6249932225985400B868AD /* ToDoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6249922225985400B868AD /* ToDoTableViewController.swift */; };
 		2B624999222D7E4300B868AD /* ToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B624998222D7E4300B868AD /* ToDoViewController.swift */; };
 		2B62499B2236A96C00B868AD /* ToDoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B62499A2236A96C00B868AD /* ToDoCell.swift */; };
+		3463D42C8792D720260072F7 /* Pods_McFadden_Payne_Final_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B08EC2B84FACD07D3BB78D7 /* Pods_McFadden_Payne_Final_Project.framework */; };
+		D3A5ACA22276B6B3000D68C5 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A5ACA12276B6B3000D68C5 /* GraphViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2B6249792225966400B868AD /* List_Payne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = List_Payne.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B6249792225966400B868AD /* McFadden_Payne_Final Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "McFadden_Payne_Final Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B62497C2225966400B868AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B6249812225966400B868AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2B6249832225966500B868AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -28,6 +30,10 @@
 		2B6249922225985400B868AD /* ToDoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableViewController.swift; sourceTree = "<group>"; };
 		2B624998222D7E4300B868AD /* ToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoViewController.swift; sourceTree = "<group>"; };
 		2B62499A2236A96C00B868AD /* ToDoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoCell.swift; sourceTree = "<group>"; };
+		4B08EC2B84FACD07D3BB78D7 /* Pods_McFadden_Payne_Final_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_McFadden_Payne_Final_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		91A5BE2F983DCCF65869841B /* Pods-McFadden_Payne_Final Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-McFadden_Payne_Final Project.release.xcconfig"; path = "Target Support Files/Pods-McFadden_Payne_Final Project/Pods-McFadden_Payne_Final Project.release.xcconfig"; sourceTree = "<group>"; };
+		CE1C0C061B25C23B8ED53A60 /* Pods-McFadden_Payne_Final Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-McFadden_Payne_Final Project.debug.xcconfig"; path = "Target Support Files/Pods-McFadden_Payne_Final Project/Pods-McFadden_Payne_Final Project.debug.xcconfig"; sourceTree = "<group>"; };
+		D3A5ACA12276B6B3000D68C5 /* GraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3463D42C8792D720260072F7 /* Pods_McFadden_Payne_Final_Project.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,20 +51,22 @@
 		2B6249702225966400B868AD = {
 			isa = PBXGroup;
 			children = (
-				2B62497B2225966400B868AD /* List_Payne */,
+				2B62497B2225966400B868AD /* McFadden_Payne_Final_Project */,
 				2B62497A2225966400B868AD /* Products */,
+				75D1360C2191C19A5DE50C3D /* Pods */,
+				EDE3E9BE6FC663B7F0837472 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		2B62497A2225966400B868AD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2B6249792225966400B868AD /* List_Payne.app */,
+				2B6249792225966400B868AD /* McFadden_Payne_Final Project.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2B62497B2225966400B868AD /* List_Payne */ = {
+		2B62497B2225966400B868AD /* McFadden_Payne_Final_Project */ = {
 			isa = PBXGroup;
 			children = (
 				2B62497C2225966400B868AD /* AppDelegate.swift */,
@@ -69,28 +78,49 @@
 				2B624990222597C400B868AD /* ToDo.swift */,
 				2B6249922225985400B868AD /* ToDoTableViewController.swift */,
 				2B62499A2236A96C00B868AD /* ToDoCell.swift */,
+				D3A5ACA12276B6B3000D68C5 /* GraphViewController.swift */,
 			);
-			path = List_Payne;
+			path = McFadden_Payne_Final_Project;
+			sourceTree = "<group>";
+		};
+		75D1360C2191C19A5DE50C3D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CE1C0C061B25C23B8ED53A60 /* Pods-McFadden_Payne_Final Project.debug.xcconfig */,
+				91A5BE2F983DCCF65869841B /* Pods-McFadden_Payne_Final Project.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		EDE3E9BE6FC663B7F0837472 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4B08EC2B84FACD07D3BB78D7 /* Pods_McFadden_Payne_Final_Project.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2B6249782225966400B868AD /* List_Payne */ = {
+		2B6249782225966400B868AD /* McFadden_Payne_Final Project */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2B62498B2225966500B868AD /* Build configuration list for PBXNativeTarget "List_Payne" */;
+			buildConfigurationList = 2B62498B2225966500B868AD /* Build configuration list for PBXNativeTarget "McFadden_Payne_Final Project" */;
 			buildPhases = (
+				E4BD5AEE93A9589B25C44F3B /* [CP] Check Pods Manifest.lock */,
 				2B6249752225966400B868AD /* Sources */,
 				2B6249762225966400B868AD /* Frameworks */,
 				2B6249772225966400B868AD /* Resources */,
+				E281E6C31523E78314A35F01 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = List_Payne;
+			name = "McFadden_Payne_Final Project";
 			productName = List_Payne;
-			productReference = 2B6249792225966400B868AD /* List_Payne.app */;
+			productReference = 2B6249792225966400B868AD /* McFadden_Payne_Final Project.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -108,7 +138,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2B6249742225966400B868AD /* Build configuration list for PBXProject "List_Payne" */;
+			buildConfigurationList = 2B6249742225966400B868AD /* Build configuration list for PBXProject "McFadden_Payne_Final Project" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -121,7 +151,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2B6249782225966400B868AD /* List_Payne */,
+				2B6249782225966400B868AD /* McFadden_Payne_Final Project */,
 			);
 		};
 /* End PBXProject section */
@@ -139,6 +169,53 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		E281E6C31523E78314A35F01 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-McFadden_Payne_Final Project/Pods-McFadden_Payne_Final Project-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-McFadden_Payne_Final Project/Pods-McFadden_Payne_Final Project-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E4BD5AEE93A9589B25C44F3B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-McFadden_Payne_Final Project-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2B6249752225966400B868AD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -147,6 +224,7 @@
 				2B624999222D7E4300B868AD /* ToDoViewController.swift in Sources */,
 				2B62497D2225966400B868AD /* AppDelegate.swift in Sources */,
 				2B6249932225985400B868AD /* ToDoTableViewController.swift in Sources */,
+				D3A5ACA22276B6B3000D68C5 /* GraphViewController.swift in Sources */,
 				2B624991222597C400B868AD /* ToDo.swift in Sources */,
 				2B62499B2236A96C00B868AD /* ToDoCell.swift in Sources */,
 			);
@@ -292,16 +370,17 @@
 		};
 		2B62498C2225966500B868AD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE1C0C061B25C23B8ED53A60 /* Pods-McFadden_Payne_Final Project.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KZ99XG8A65;
-				INFOPLIST_FILE = List_Payne/Info.plist;
+				DEVELOPMENT_TEAM = Z4QNW2AD4B;
+				INFOPLIST_FILE = "$(SRCROOT)/McFadden_Payne_Final_Project/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "awp.List-Payne";
+				PRODUCT_BUNDLE_IDENTIFIER = "ljm.McFadden-Payne-Final-Project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -310,16 +389,17 @@
 		};
 		2B62498D2225966500B868AD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91A5BE2F983DCCF65869841B /* Pods-McFadden_Payne_Final Project.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KZ99XG8A65;
-				INFOPLIST_FILE = List_Payne/Info.plist;
+				DEVELOPMENT_TEAM = Z4QNW2AD4B;
+				INFOPLIST_FILE = "$(SRCROOT)/McFadden_Payne_Final_Project/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "awp.List-Payne";
+				PRODUCT_BUNDLE_IDENTIFIER = "ljm.McFadden-Payne-Final-Project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -329,7 +409,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2B6249742225966400B868AD /* Build configuration list for PBXProject "List_Payne" */ = {
+		2B6249742225966400B868AD /* Build configuration list for PBXProject "McFadden_Payne_Final Project" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2B6249892225966500B868AD /* Debug */,
@@ -338,7 +418,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2B62498B2225966500B868AD /* Build configuration list for PBXNativeTarget "List_Payne" */ = {
+		2B62498B2225966500B868AD /* Build configuration list for PBXNativeTarget "McFadden_Payne_Final Project" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2B62498C2225966500B868AD /* Debug */,

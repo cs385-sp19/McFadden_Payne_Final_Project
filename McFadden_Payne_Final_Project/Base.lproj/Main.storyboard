@@ -6,19 +6,20 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--My To-Do's-->
+        <!--Current Interests-->
         <scene sceneID="PRQ-6g-Lo9">
             <objects>
-                <tableViewController id="nEo-eL-mn6" customClass="ToDoTableViewController" customModule="List_Payne" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="nEo-eL-mn6" customClass="ToDoTableViewController" customModule="McFadden_Payne_Final_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="YDT-Ql-4Ep">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ToDoCellIdentifier" id="VRP-Fy-FJG" customClass="ToDoCell" customModule="List_Payne" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ToDoCellIdentifier" id="VRP-Fy-FJG" customClass="ToDoCell" customModule="McFadden_Payne_Final_Project" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VRP-Fy-FJG" id="5nf-W1-47j">
@@ -31,16 +32,17 @@
                                                 <constraint firstAttribute="width" constant="36" id="NOH-52-9Cn"/>
                                                 <constraint firstAttribute="height" constant="36" id="kw1-n0-6ei"/>
                                             </constraints>
-                                            <state key="normal" title="Button" image="Unchecked"/>
+                                            <state key="normal" title="Button" image="GraphIcon"/>
                                             <state key="disabled">
                                                 <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
-                                            <state key="selected" image="Checked">
+                                            <state key="selected" image="GraphIcon">
                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                             <connections>
                                                 <action selector="completeButtonTapped" destination="VRP-Fy-FJG" eventType="touchUpInside" id="NsY-0N-3Nn"/>
                                                 <action selector="isCompleteButtonTapped:" destination="9Lb-AR-USh" eventType="touchUpInside" id="80E-VQ-emt"/>
+                                                <segue destination="6kD-s1-EyC" kind="presentation" identifier="showGraph" id="M9D-EG-4Vb"/>
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q1q-1c-f6s">
@@ -72,7 +74,7 @@
                             <outlet property="delegate" destination="nEo-eL-mn6" id="9Jf-cA-wom"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="My To-Do's" id="FUE-lt-pbl">
+                    <navigationItem key="navigationItem" title="Current Interests" id="FUE-lt-pbl">
                         <barButtonItem key="leftBarButtonItem" title="Done" id="SfR-Ag-a4N"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="B8I-4N-Z3E">
                             <connections>
@@ -85,16 +87,64 @@
             </objects>
             <point key="canvasLocation" x="645.60000000000002" y="797.45127436281871"/>
         </scene>
+        <!--Graph View Controller-->
+        <scene sceneID="kUs-ah-MZl">
+            <objects>
+                <viewController id="6kD-s1-EyC" customClass="GraphViewController" customModule="McFadden_Payne_Final_Project" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6r2-jA-T03">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z8f-0t-f41">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Graphs" id="Hbe-Z2-MyA">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="ASt-VC-ySp">
+                                            <connections>
+                                                <segue destination="65U-Yn-7O8" kind="unwind" unwindAction="unwindToToDoListWithSegue:" id="aap-ec-RwD"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KT7-SC-2f8" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="8" y="64" width="359" height="261"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="261" id="xET-Zl-lRx"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="KT7-SC-2f8" firstAttribute="leading" secondItem="yxA-4o-vOZ" secondAttribute="leading" constant="8" id="CuP-Mr-saS"/>
+                            <constraint firstItem="yxA-4o-vOZ" firstAttribute="trailing" secondItem="KT7-SC-2f8" secondAttribute="trailing" constant="8" id="MkJ-vk-R1y"/>
+                            <constraint firstItem="Z8f-0t-f41" firstAttribute="leading" secondItem="yxA-4o-vOZ" secondAttribute="leading" id="N7l-8t-JIr"/>
+                            <constraint firstItem="Z8f-0t-f41" firstAttribute="trailing" secondItem="yxA-4o-vOZ" secondAttribute="trailing" id="OES-fw-erb"/>
+                            <constraint firstItem="Z8f-0t-f41" firstAttribute="top" secondItem="yxA-4o-vOZ" secondAttribute="top" id="hEJ-Np-Wi6"/>
+                            <constraint firstItem="KT7-SC-2f8" firstAttribute="top" secondItem="Z8f-0t-f41" secondAttribute="bottom" id="qSS-lm-SJI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="yxA-4o-vOZ"/>
+                    </view>
+                    <connections>
+                        <outlet property="LineChartView" destination="KT7-SC-2f8" id="XhE-Fy-8sK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="juj-pj-sT4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="65U-Yn-7O8" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1479.2" y="797.45127436281871"/>
+        </scene>
         <!--New ToDo-->
         <scene sceneID="kwJ-0f-zkv">
             <objects>
-                <tableViewController title="New ToDo" id="9Lb-AR-USh" customClass="ToDoViewController" customModule="List_Payne" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="New ToDo" id="9Lb-AR-USh" customClass="ToDoViewController" customModule="McFadden_Payne_Final_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Iew-FR-vOo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
-                            <tableViewSection headerTitle="Basic Info" id="0Co-J7-Cxa">
+                            <tableViewSection headerTitle="Title" id="0Co-J7-Cxa">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="ChV-Mn-H0C">
                                         <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
@@ -144,7 +194,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Due Date" id="ZW2-U7-Uei">
+                            <tableViewSection headerTitle="Date" id="ZW2-U7-Uei">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="200" id="af0-aJ-woL">
                                         <rect key="frame" x="0.0" y="155.5" width="375" height="200"/>
@@ -197,11 +247,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="OPy-i2-bn3">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Noteworthy events or circumstances:" translatesAutoresizingMaskIntoConstraints="NO" id="OPy-i2-bn3">
                                                     <rect key="frame" x="16" y="11" width="343" height="178"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                             </subviews>
@@ -245,7 +294,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mqu-Qf-YaW" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="rCO-kz-h7u" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="648.79999999999995" y="1459.52023988006"/>
+            <point key="canvasLocation" x="908" y="1618"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WSf-Rl-VuG">
@@ -261,7 +310,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9vP-sl-n5n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-305" y="1460"/>
+            <point key="canvasLocation" x="196" y="1618"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="UI6-X3-GuL">
@@ -282,6 +331,7 @@
     </scenes>
     <resources>
         <image name="Checked" width="44" height="44"/>
+        <image name="GraphIcon" width="128" height="128"/>
         <image name="Unchecked" width="44" height="44"/>
     </resources>
     <inferredMetricsTieBreakers>

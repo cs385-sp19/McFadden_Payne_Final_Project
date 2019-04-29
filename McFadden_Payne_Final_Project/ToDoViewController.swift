@@ -89,5 +89,6 @@ class ToDoViewController: UITableViewController {
         }
         updateDueDateLabel(date: dueDatePickerView.date)
         updateSaveButtonState()
+        self.view.backgroundColor = UIColor(hue: 0.50, saturation: 0.66, brightness: 0.66, alpha: 1.0)
     }
 }
