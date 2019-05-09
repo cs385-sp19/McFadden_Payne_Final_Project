@@ -4,6 +4,7 @@ struct ToDo: Codable {
     var title: String
     var isComplete: Bool
     var dueDate: Date
+    var amount: Int
     var notes: String?
 
     static let DocumentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -23,9 +24,9 @@ struct ToDo: Codable {
     }
     
     static func loadSampleToDos() -> [ToDo] {
-        let todo1 = ToDo(title: "Hours of sleep", isComplete: false, dueDate: Date(), notes: "Not enough")
-        let todo2 = ToDo(title: "Miles run", isComplete: false, dueDate: Date(), notes: "Above zero?")
-        let todo3 = ToDo(title: "Times I've been to Walmart", isComplete: false, dueDate: Date(), notes: "You know it's alot.")
+        let todo1 = ToDo(title: "Hours of sleep", isComplete: false, dueDate: Date(),amount: 2, notes: "Not enough")
+        let todo2 = ToDo(title: "Miles run", isComplete: false, dueDate: Date(), amount: 0, notes: "Above zero?")
+        let todo3 = ToDo(title: "Times I've been to Walmart", isComplete: false, dueDate: Date(), amount: 4, notes: "You know it's alot.")
         return [todo1, todo2, todo3]
     }
     

@@ -8,6 +8,7 @@ import UIKit
 
 class ToDoTableViewController: UITableViewController, ToDoCellDelegate {
     var todos = [ToDo]()
+    var indexPathForButton = IndexPath.init()
     
     @IBAction func unwindToToDoList(segue: UIStoryboardSegue) {
         guard segue.identifier == "saveUnwind" else {return}
@@ -33,6 +34,10 @@ class ToDoTableViewController: UITableViewController, ToDoCellDelegate {
             todos[indexPath.row] = todo
             tableView.reloadRows(at: [indexPath], with: .automatic)
             ToDo.saveToDos(todos)
+            
+            let buttonPosition: CGPoint = sender.convert(CGPoint.zero, to:self.tableView)
+            let indexPath = self.tableView.indexPathForRow(at: buttonPosition)
+            indexPathForButton = indexPath ?? IndexPath.init()
         }
     }
     
@@ -46,10 +51,15 @@ class ToDoTableViewController: UITableViewController, ToDoCellDelegate {
         }
         let todo = todos[indexPath.row]
         cell.titleLabel?.text = todo.title
+        cell.isCompleteButton.tag = indexPath.row
         cell.isCompleteButton.isSelected = todo.isComplete
         cell.backgroundColor = .clear
         cell.delegate = self
         return cell
+    }
+    
+    func assignBackground(){
+        tableView.backgroundView = UIImageView(image: UIImage(named: "graphPaperGreen"))
     }
     
     override func viewDidLoad() {
@@ -59,7 +69,8 @@ class ToDoTableViewController: UITableViewController, ToDoCellDelegate {
             todos = ToDo.loadSampleToDos()
         }
         navigationItem.leftBarButtonItem = editButtonItem
-        self.view.backgroundColor = UIColor(hue: 0.25, saturation: 0.66, brightness: 0.66, alpha: 1.0)
+        //self.view.backgroundColor = UIColor(hue: 0.25, saturation: 0.66, brightness: 0.66, alpha: 1.0)
+        assignBackground()
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -74,12 +85,18 @@ class ToDoTableViewController: UITableViewController, ToDoCellDelegate {
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: (Any)?) {
         if segue.identifier == "showDetails" {
             let todoViewController = segue.destination as! ToDoViewController
             let indexPath = tableView.indexPathForSelectedRow!
             let selectedTodo = todos[indexPath.row]
             todoViewController.todo = selectedTodo
+        }
+        else if segue.identifier == "showGraph" {
+            let graphViewController = segue.destination as! GraphViewController
+            let indexPath = indexPathForButton
+            let selectedTodo = todos[indexPath.row]
+            graphViewController.todo = selectedTodo
         }
     }
 }

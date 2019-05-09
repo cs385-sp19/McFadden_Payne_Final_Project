@@ -13,9 +13,15 @@ class ToDoViewController: UITableViewController {
     @IBOutlet weak var dueDatePickerView: UIDatePicker!
     @IBOutlet weak var notesTextView: UITextView!
     @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var stepperLabel: UILabel!
     
     var isPickerHidden = true
     var todo: ToDo?
+    
+    @IBAction func amountStepper(_ sender: UIStepper) {
+        sender.minimumValue = Double((-1 * (todo?.amount ?? 0)))
+        updatetAmountLabel(amount: Int(sender.value))
+    }
     
     @IBAction func textEditingChanged(_ sender: UITextField) {
         updateSaveButtonState()
@@ -31,6 +37,12 @@ class ToDoViewController: UITableViewController {
     
     @IBAction func isCompleteButtonTapped(_ sender: UIButton) {
         isCompleteButton.isSelected = !isCompleteButton.isSelected
+    }
+    
+    func updatetAmountLabel(amount: Int) {
+        let text = String(amount + (todo?.amount ?? 0))
+        print("amount stepper is: ", amount)
+        stepperLabel.text = text
     }
     
     func updateDueDateLabel(date: Date) {
@@ -60,8 +72,9 @@ class ToDoViewController: UITableViewController {
         let title = titleTextField.text!
         let isComplete = isCompleteButton.isSelected
         let dueDate = dueDatePickerView.date
+        let amount = Int(stepperLabel.text ?? "0")
         let notes = notesTextView.text
-        todo = ToDo(title: title, isComplete: isComplete, dueDate: dueDate, notes: notes)
+        todo = ToDo(title: title, isComplete: isComplete, dueDate: dueDate,amount: amount ?? 0, notes: notes)
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -75,20 +88,26 @@ class ToDoViewController: UITableViewController {
         }
     }
     
+    func assignBackground(){
+        tableView.backgroundView = UIImageView(image: UIImage(named: "graphPaperGreen"))
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if let todo = todo {
-            navigationItem.title = "To-Do"
+            navigationItem.title = "Task"
             titleTextField.text = todo.title
             isCompleteButton.isSelected = todo.isComplete
             dueDatePickerView.date = todo.dueDate
             notesTextView.text = todo.notes
+            stepperLabel.text = String(todo.amount)
         }
         else {
             dueDatePickerView.date = Date().addingTimeInterval(24*60*60)
         }
         updateDueDateLabel(date: dueDatePickerView.date)
         updateSaveButtonState()
-        self.view.backgroundColor = UIColor(hue: 0.50, saturation: 0.66, brightness: 0.66, alpha: 1.0)
+        //self.view.backgroundColor = UIColor(hue: 0.50, saturation: 0.66, brightness: 0.66, alpha: 1.0)
+        assignBackground()
     }
 }

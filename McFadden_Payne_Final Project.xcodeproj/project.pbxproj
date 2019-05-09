@@ -70,14 +70,14 @@
 			isa = PBXGroup;
 			children = (
 				2B62497C2225966400B868AD /* AppDelegate.swift */,
-				2B6249802225966400B868AD /* Main.storyboard */,
-				2B624998222D7E4300B868AD /* ToDoViewController.swift */,
-				2B6249832225966500B868AD /* Assets.xcassets */,
-				2B6249852225966500B868AD /* LaunchScreen.storyboard */,
 				2B6249882225966500B868AD /* Info.plist */,
 				2B624990222597C400B868AD /* ToDo.swift */,
-				2B6249922225985400B868AD /* ToDoTableViewController.swift */,
 				2B62499A2236A96C00B868AD /* ToDoCell.swift */,
+				2B6249802225966400B868AD /* Main.storyboard */,
+				2B6249832225966500B868AD /* Assets.xcassets */,
+				2B6249852225966500B868AD /* LaunchScreen.storyboard */,
+				2B6249922225985400B868AD /* ToDoTableViewController.swift */,
+				2B624998222D7E4300B868AD /* ToDoViewController.swift */,
 				D3A5ACA12276B6B3000D68C5 /* GraphViewController.swift */,
 			);
 			path = McFadden_Payne_Final_Project;
@@ -89,7 +89,6 @@
 				CE1C0C061B25C23B8ED53A60 /* Pods-McFadden_Payne_Final Project.debug.xcconfig */,
 				91A5BE2F983DCCF65869841B /* Pods-McFadden_Payne_Final Project.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
